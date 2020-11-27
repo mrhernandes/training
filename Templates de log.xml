@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-11-27T22:37:44Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Logs Linux</template>
+            <name>Template Logs Linux</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Log Linux</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>My Log</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>logrt[/tmp/my.log]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Log Linux</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
+        <template>
+            <template>Template Logs Windows</template>
+            <name>Template Logs Windows</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Windows_Logs</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Application Log</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+                    <key>eventlog[Application]</key>
+                    <delay>30</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+                    <applications>
+                        <application>
+                            <name>Windows_Logs</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{logseverity(0)}=4</expression>
+                            <name>Application Log ERROR</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=1</expression>
+                            <name>Application Log INFORMATION</name>
+                            <status>DISABLED</status>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(8)}=8</expression>
+                            <name>Application Log SECURITY</name>
+                            <status>DISABLED</status>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=2</expression>
+                            <name>Application Log WARNING</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Directory Service Log</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+                    <key>eventlog[Directory Service]</key>
+                    <delay>30</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+                    <applications>
+                        <application>
+                            <name>Windows_Logs</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{logseverity(0)}=4</expression>
+                            <name>Directory Service Log ERROR</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=1</expression>
+                            <name>Directory Service Log INFORMATION</name>
+                            <status>DISABLED</status>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(8)}=8</expression>
+                            <name>Directory Service Log SECURITY</name>
+                            <status>DISABLED</status>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=2</expression>
+                            <name>Directory Service Log WARNING</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>File Replication Service Log</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+                    <key>eventlog[File Replication Service]</key>
+                    <delay>30</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+                    <applications>
+                        <application>
+                            <name>Windows_Logs</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{logseverity(0)}=4</expression>
+                            <name>File Replication Service Log ERROR</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=1</expression>
+                            <name>File Replication Service Log INFORMATION</name>
+                            <status>DISABLED</status>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(8)}=8</expression>
+                            <name>File Replication Service Log SECURITY</name>
+                            <status>DISABLED</status>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=2</expression>
+                            <name>File Replication Service Log WARNING</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Security Log</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+                    <key>eventlog[Security]</key>
+                    <delay>30</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+                    <applications>
+                        <application>
+                            <name>Windows_Logs</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{logseverity(0)}=4</expression>
+                            <name>Security Log ERROR</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=1</expression>
+                            <name>Security Log INFORMATION</name>
+                            <status>DISABLED</status>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(8)}=8</expression>
+                            <name>Security Log SECURITY</name>
+                            <status>DISABLED</status>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=2</expression>
+                            <name>Security Log WARNING</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>System Log 2</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[System,,Error]</key>
+                    <delay>30</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Windows_Logs</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>System Log</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+                    <key>eventlog[System]</key>
+                    <delay>30</delay>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+                    <applications>
+                        <application>
+                            <name>Windows_Logs</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{logseverity(0)}=4</expression>
+                            <name>System Log ERROR</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=1</expression>
+                            <name>System Log INFORMATION</name>
+                            <status>DISABLED</status>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(8)}=8</expression>
+                            <name>System Log SECURITY</name>
+                            <status>DISABLED</status>
+                        </trigger>
+                        <trigger>
+                            <expression>{logseverity(0)}=2</expression>
+                            <name>System Log WARNING</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
