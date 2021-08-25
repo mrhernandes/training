@@ -52,7 +52,7 @@ cp -R /etc/my.cnf $backup_path/backup-$date/fileconf/mysql
 cp -R /etc/my.cnf.d/* $backup_path/backup-$date/fileconf/mysql
 
 # Add File to .tar
-tar -cvf $backup_path/backup-$date.tar
+tar -cvf $backup_path/backup-$date.tar $backup_path/backup-$date
 
 # Add File to .tar.gz
 gzip $backup_path/backup-$date.tar
